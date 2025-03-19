@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_chef_answer_form" model="ir.ui.view">
+        <field name="name">chef.answer.form</field>
+        <field name="model">chef.answer</field>
+        <field name="arch" type="xml">
+            <form string="Chef Answer">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="chef_id" domain="[('resource_id.department_id.name', '=', 'משרד')]"/>
+                            <field name="event_id" string="Event"/>
+                            <field name="address_id" string="Venue"/>
+                            <field name="user_id" string="Responsible"/>
+                            <field name="shift_manager_id"/>
+                            <field name="date_begin" string="Start Date"/>
+                            <field name="date_end" string="End Date"/>
+                        </group>
+                        <group>
+                            <field name="actual_participants"/>
+                            <field name="customer_satisfaction"/>
+                            <field name="unusual_problems"/>
+                            <field name="is_chef_answer"/>
+                            <field name="is_shift_manager_answer"/>
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_chef_answer_list" model="ir.ui.view">
+        <field name="name">chef.answer.list</field>
+        <field name="model">chef.answer</field>
+        <field name="arch" type="xml">
+            <list string="Chef Answer">
+                <field name="event_id" string="Event"/>
+                <field name="chef_id" />
+                <field name="address_id" string="Venue"/>
+                <field name="user_id" string="Responsible"/>
+                <field name="date_begin" string="Start Date"/>
+                <field name="date_end" string="End Date"/>
+                <field name="actual_participants"/>
+                <field name="customer_satisfaction"/>
+                <field name="unusual_problems"/>
+                <field name="is_chef_answer"/>
+                <field name="is_shift_manager_answer"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_chef_answer" model="ir.actions.act_window">
+        <field name="name">Chefs Answers</field>
+        <field name="res_model">chef.answer</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_chef_answer_root" name="Chefs Answers"
+              parent="event.event_main_menu" sequence="100"
+              action="action_chef_answer"/>
+
+</odoo>

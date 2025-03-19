@@ -1,0 +1,276 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bizzup_event_customization
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-04 12:53+0000\n"
+"PO-Revision-Date: 2025-03-04 12:53+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__actual_participants
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Actual Participants"
+msgstr "מספר משתתפים בפועל"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__apron_number
+msgid "Apron Number"
+msgstr "מספר סינרים"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Apron number"
+msgstr "מספר סינרים"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__base_url
+msgid "Base Url"
+msgstr ""
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__beer
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Beer"
+msgstr "בירות"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_event_view_form_inherit
+msgid "Business Workshop"
+msgstr "סדנה עסקית"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__chef_id
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Chef"
+msgstr "שף"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid ""
+"Chef\n"
+"                    Feedback Form"
+msgstr "משוב סדנה"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_event_view_form_inherit
+msgid "Chef Answer"
+msgstr "מענה שף"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__is_chef_answer
+msgid "Chef answer"
+msgstr "מענה שף"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__customer_id
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Customer"
+msgstr "לקוח"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__customer_satisfaction
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Customer Satisfaction"
+msgstr "שביעות רצון לקוח"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Date"
+msgstr "תאריך סדנה"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+msgid "Employee Event Feedback Form"
+msgstr ""
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__employee_in_charge_id
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Employee in Charge"
+msgstr "אחראי משמרת"
+
+#. module: bizzup_event_customization
+#: model:ir.model,name:bizzup_event_customization.model_event_event
+msgid "Event"
+msgstr "אירוע"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Event Name"
+msgstr "שם סדנה"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__event_number
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Event Number"
+msgstr "מספר סדנה"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__financial_notes
+msgid "Financial Notes"
+msgstr "הערות כספים"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_thank_you
+msgid "Go to Homepage"
+msgstr ""
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields.selection,name:bizzup_event_customization.selection__event_event__beer__no
+#: model:ir.model.fields.selection,name:bizzup_event_customization.selection__event_event__soft_drink__no
+#: model:ir.model.fields.selection,name:bizzup_event_customization.selection__event_event__wines__no
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "NO"
+msgstr "לא"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__notes_for_chef
+msgid "Notes for the Chef"
+msgstr "הערות לשף"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Notes for the chef"
+msgstr "הערות לשף"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__notes_shift_manager
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+msgid "Notes of Shift Managers"
+msgstr "הערות מנהלי משמרת"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Participants"
+msgstr "מספר משתתפים"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__sale_order_id
+msgid "Sale Order"
+msgstr "הזמנת לקוח"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__sensitivities
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Sensitivities"
+msgstr "רגישויות"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__soft_drink
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Soft Drink"
+msgstr "משקאות קלים"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Submit"
+msgstr ""
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Tags"
+msgstr "סוג סדנה"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_thank_you
+msgid "Thank You!"
+msgstr ""
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Time of End"
+msgstr "זמן סיום סדנה"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Time of Start"
+msgstr "זמן התחלת סדנה"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.view_event_calendar_inherit
+msgid "Type Of Event"
+msgstr "סוג סדנה"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__unusual_problems
+msgid "Unusual Problems"
+msgstr "בעיות ואירועים חריגים בסדנה"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Unusual problems"
+msgstr "בעיות ואירועים חריגים בסדנה"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__vegans_number
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Vegans Number"
+msgstr "מספר טבעונים"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__vegetarians_number
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Vegetarians Number"
+msgstr "מספר צמחונים"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Venue"
+msgstr "אולם"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields,field_description:bizzup_event_customization.field_event_event__wines
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "Wines"
+msgstr "יינות"
+
+#. module: bizzup_event_customization
+#: model:ir.model.fields.selection,name:bizzup_event_customization.selection__event_event__beer__yes
+#: model:ir.model.fields.selection,name:bizzup_event_customization.selection__event_event__soft_drink__yes
+#: model:ir.model.fields.selection,name:bizzup_event_customization.selection__event_event__wines__yes
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.employee_event_feedback_form
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_form
+msgid "YES"
+msgstr "כן"
+
+#. module: bizzup_event_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_event_customization.event_feedback_thank_you
+msgid ""
+"Your feedback has been submitted successfully.\n"
+"                    <br/>\n"
+"                    We appreciate your time and effort in sharing your\n"
+"                    experience with us."
+msgstr ""

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--product Transfer List View-->
+    <record id="view_product_transfer_list" model="ir.ui.view">
+        <field name="name">product.transfer.list</field>
+        <field name="model">product.transfer</field>
+        <field name="arch" type="xml">
+            <list string="Product Transfer" editable="bottom" create="1"
+                  edit="1" js_class="product_transfer">
+                <field name="product_id"/>
+                <field name="on_hand_qty" readonly="True"/>
+                <field name="qty_to_transfer"/>
+                <field name="location_id"/>
+                <field name="destination_id"/>
+                <field name="user_id" readonly="True"/>
+                <field name="check_on_hand_qty" invisible="True"/>
+                <button string="Transfer" invisible="check_on_hand_qty"
+                        type="object"
+                        name="action_transfer" class="btn-secondary"/>
+            </list>
+        </field>
+    </record>
+
+    <!--action open product transfer list view-->
+    <record id="action_view_product_transfer" model="ir.actions.act_window">
+        <field name="name">Product Transfer</field>
+        <field name="res_model">product.transfer</field>
+        <field name="view_mode">list</field>
+    </record>
+    <!--product transfer menu located in inventory operation menu-->
+    <menuitem id="menu_product_transfer_list"
+              name="Product Transfer"
+              action="action_view_product_transfer"
+              parent="stock.menu_stock_transfers"
+              sequence="51"/>
+</odoo>

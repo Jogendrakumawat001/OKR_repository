@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+    <!--add new button in product transfer tree view header-->
+    <t t-name="button_product_transfer.ListView.Buttons"
+       t-inherit="web.ListView.Buttons">
+        <xpath expr="//div[hasclass('o_list_buttons')]" position="after">
+            <button type="button" class="btn btn-secondary"
+                    style="margin-left: 6px;" t-on-click="OnTransferClick">
+                Transfer All
+            </button>
+        </xpath>
+    </t>
+</templates>

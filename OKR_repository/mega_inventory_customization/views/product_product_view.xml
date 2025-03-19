@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--create new page in product variant form view and add new field-->
+    <record id="view_product_form_inherit" model="ir.ui.view">
+        <field name="name">product.form</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='invoicing']" position="after">
+                <page name="allowed_bins" string="Allowed Bins">
+                    <group>
+                        <field name="allow_bins" widget="many2many_tags"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

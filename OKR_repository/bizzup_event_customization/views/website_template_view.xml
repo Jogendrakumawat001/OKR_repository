@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Chef event feedback form-->
+    <template id="event_feedback_form" name="Event Feedback Form">
+        <t t-call="website.layout">
+            <div class="eventForm container text-left"
+                 style="max-width: 800px; margin-top: 40px;margin-left: 40px;margin-bottom: 10px;">
+                <h2 class="mb-4 font-weight-bold" style="color: #444;">Chef
+                    Feedback Form
+                </h2>
+                <div class="container">
+                    <form id="eventForm"
+                          action="/event-feedback/submit_feedback"
+                          method="post">
+                        <input type="hidden" name="csrf_token"
+                               t-att-value="request.csrf_token()"/>
+                        <input type="hidden" name="event_id"
+                               t-att-value="event.id"/>
+
+                        <div class="container mt-4">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Chef
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <select name="chef_id"
+                                                    class="form-control mb-2"
+                                                    style="color: black;">
+                                                <option>Select Your Name</option>
+                                                <t t-foreach="event.chef_ids"
+                                                   t-as="chef">
+                                                    <option t-att-value="chef.id">
+                                                        <t t-esc="chef.name"/>
+                                                    </option>
+                                                </t>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Event Number
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="number"
+                                                   name="event_number"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   readonly="readonly"
+                                                   t-att-value="event.x_studio_integer_field_4m6_1ijd3uhtg"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Event Name
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   name="event_name"
+                                                   class="form-control mb-2"
+                                                   t-att-value="event.name"
+                                                   style="color: black;"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Participants
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="number"
+                                                   name="participants"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="event.participants"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Date
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text" name="date"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="event.date_begin"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Time of Start
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   name="time_of_start"
+                                                   style="color: black;"
+                                                   class="form-control mb-2"
+                                                   t-att-value="event.date_begin"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Time of End
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   name="time_of_end"
+                                                   style="color: black;"
+                                                   class="form-control mb-2"
+                                                   t-att-value="event.date_end"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Customer
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text" name="customer"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="event.customer_id.name"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Venue
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text" name="venue"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="event.address_id.name"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Employee in Charge
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   name="employee_in_charge"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="event.employee_in_charge_id.name"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Tags
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text" name="tags"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="', '.join(event.tag_ids.mapped('name'))"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Sensitivities
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   name="sensitivities"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="event.sensitivities"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Vegans Number
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="number"
+                                                   name="vegans_number"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="event.vegans_number"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Vegetarians Number
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="number"
+                                                   name="vegetarians_number"
+                                                   style="color: black;"
+                                                   class="form-control mb-2"
+                                                   t-att-value="event.vegetarians_number"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Wines
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control mb-2">
+                                                <option t-att-value="event.wines">
+                                                    <t t-if="event.wines == 'YES'">
+                                                        YES
+                                                    </t>
+                                                    <t t-if="event.wines == 'NO'">
+                                                        NO
+                                                    </t>
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Beer
+                                        </label>
+                                        <div class="col-sm-8"
+                                             style="color: black;">
+                                            <select class="form-control mb-2">
+                                                <option t-att-value="event.wines">
+                                                    <t t-if="event.beer == 'YES'">
+                                                        YES
+                                                    </t>
+                                                    <t t-if="event.beer == 'NO'">
+                                                        NO
+                                                    </t>
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Soft Drink
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control mb-2">
+                                                <option t-att-value="event.wines">
+                                                    <t t-if="event.soft_drink == 'YES'">
+                                                        YES
+                                                    </t>
+                                                    <t t-if="event.soft_drink == 'NO'">
+                                                        NO
+                                                    </t>
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Apron number
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="number"
+                                                   name="apron_number"
+                                                   style="color: black;"
+                                                   class="form-control mb-2"
+                                                   t-att-value="event.apron_number"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Notes for the chef
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <textarea
+                                                    name="notes_for_chef"
+                                                    class="form-control mb-2"
+                                                    readonly="readonly"
+                                                    style="color: black; vertical-align: top;"
+                                                    t-esc="event.notes_for_chef">
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Actual Participants
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   style="color: black;"
+                                                   required="required"
+                                                   name="actual_participants"
+                                                   class="form-control mb-2"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Customer Satisfaction
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <textarea
+                                                    name="customer_satisfaction"
+                                                    required="required"
+                                                    class="form-control mb-2"
+                                                    style="color: black; vertical-align: top;"
+                                            ></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Unusual problems
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <textarea name="unusual_problems"
+                                                      required="required"
+                                                      class="form-control mb-2"
+                                                      style="color: black;vertical-align: top;"
+                                            ></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit"
+                                    style="background-color: #714B67; color:white;"
+                                    class="btn btn-primary mt-3">Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!--Employee in charge event feedback form-->
+    <template id="shift_manager_event_feedback_form"
+              name="Shift Manager Event Feedback Form">
+        <t t-call="website.layout">
+            <div class="eventForm container text-left"
+                 style="max-width: 800px; margin-top: 40px;margin-left: 40px;margin-bottom: 10px;">
+                <h2 class="mb-4 font-weight-bold" style="color: #444;">
+                    Shift Manager Event Feedback Form
+                </h2>
+                <div class="container">
+                    <form id="eventForm"
+                          action="/shift-manager-event-feedback/submit_feedback"
+                          method="post">
+                        <input type="hidden" name="csrf_token"
+                               t-att-value="request.csrf_token()"/>
+                        <input type="hidden" name="event_id"
+                               t-att-value="event.id"/>
+
+                        <div class="container mt-4">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Shift Manager
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   name="manager_id"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   readonly="readonly"
+                                                   t-att-value="event.shift_manager_id.name"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Event Number
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="number"
+                                                   name="event_number"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   readonly="readonly"
+                                                   t-att-value="event.x_studio_integer_field_4m6_1ijd3uhtg"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Event Name
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   name="event_name"
+                                                   class="form-control mb-2"
+                                                   t-att-value="event.name"
+                                                   style="color: black;"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Participants
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="number"
+                                                   name="participants"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="event.participants"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Date
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text" name="date"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="event.date_begin"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Time of Start
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   name="time_of_start"
+                                                   style="color: black;"
+                                                   class="form-control mb-2"
+                                                   t-att-value="event.date_begin"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Time of End
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   name="time_of_end"
+                                                   style="color: black;"
+                                                   class="form-control mb-2"
+                                                   t-att-value="event.date_end"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Customer
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text" name="customer"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="event.customer_id.name"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Venue
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text" name="venue"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="event.address_id.name"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Chefs
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text" name="chefs"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="', '.join(event.chef_ids.mapped('name'))"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Employee in Charge
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   name="employee_in_charge"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="event.employee_in_charge_id.name"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Tags
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text" name="tags"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="', '.join(event.tag_ids.mapped('name'))"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Sensitivities
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="text"
+                                                   name="sensitivities"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="event.sensitivities"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Vegans Number
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="number"
+                                                   name="vegans_number"
+                                                   class="form-control mb-2"
+                                                   style="color: black;"
+                                                   t-att-value="event.vegans_number"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Vegetarians Number
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="number"
+                                                   name="vegetarians_number"
+                                                   style="color: black;"
+                                                   class="form-control mb-2"
+                                                   t-att-value="event.vegetarians_number"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Wines
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control mb-2">
+                                                <option t-att-value="event.wines">
+                                                    <t t-if="event.wines == 'YES'">
+                                                        YES
+                                                    </t>
+                                                    <t t-if="event.wines == 'NO'">
+                                                        NO
+                                                    </t>
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Beer
+                                        </label>
+                                        <div class="col-sm-8"
+                                             style="color: black;">
+                                            <select class="form-control mb-2">
+                                                <option t-att-value="event.wines">
+                                                    <t t-if="event.beer == 'YES'">
+                                                        YES
+                                                    </t>
+                                                    <t t-if="event.beer == 'NO'">
+                                                        NO
+                                                    </t>
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Soft Drink
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control mb-2">
+                                                <option t-att-value="event.wines">
+                                                    <t t-if="event.soft_drink == 'YES'">
+                                                        YES
+                                                    </t>
+                                                    <t t-if="event.soft_drink == 'NO'">
+                                                        NO
+                                                    </t>
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Apron number
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <input type="number"
+                                                   name="apron_number"
+                                                   style="color: black;"
+                                                   class="form-control mb-2"
+                                                   t-att-value="event.apron_number"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Notes for the chef
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <textarea
+                                                    name="notes_for_chef"
+                                                    class="form-control mb-2"
+                                                    readonly="readonly"
+                                                    style="color: black; vertical-align: top;"
+                                                    t-esc="event.notes_for_chef">
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-4 col-form-label text-left">
+                                            Notes of Shift Managers
+                                        </label>
+                                        <div class="col-sm-8">
+                                            <textarea
+                                                    name="notes_shift_manager"
+                                                    required="required"
+                                                    class="form-control mb-2"
+                                                    t-esc="event.notes_shift_manager or ''"
+                                                    style="color: black; vertical-align: top;"
+                                            ></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit"
+                                    style="background-color: #714B67; color:white;"
+                                    class="btn btn-primary mt-3">Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <!--Thank you page-->
+    <template id="event_feedback_thank_you" name="Event Feedback Thank You">
+        <t t-call="website.layout">
+            <div class="container text-center"
+                 style="max-width: 600px; margin-top: 50px;margin-bottom: 10px;">
+                <!-- Success Icon -->
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <div style="background-color: #28a745; border-radius: 50%; width: 80px; height: 80px;
+                                display: flex; justify-content: center; align-items: center;">
+                        <i class="fa fa-paper-plane"
+                           style="font-size: 40px; color: white;"/>
+                    </div>
+                </div>
+
+                <!-- Thank You Message -->
+                <h1 class="mt-4" style="font-size: 32px; font-weight: bold;">
+                    Thank You!
+                </h1>
+                <p style="font-size: 18px; color: #555;">
+                    Your feedback has been submitted successfully.
+                    <br/>
+                    We appreciate your time and effort in sharing your
+                    experience with us.
+                </p>
+
+                <!-- Button to Return to Homepage -->
+                <a href="/" class="btn btn-primary mt-3"
+                   style="font-size: 16px; padding: 10px 20px;background-color: #714B67; color:white;">
+                    Go to Homepage
+                </a>
+            </div>
+        </t>
+    </template>
+</odoo>

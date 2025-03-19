@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!-- Event Calendar View -->
+    <record id="view_event_calendar_inherit" model="ir.ui.view">
+        <field name="name">event.event.calendar.inherit</field>
+        <field name="model">event.event</field>
+        <field name="inherit_id" ref="event.view_event_calendar"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='event_type_id']" position="after">
+                <field name="tag_ids" string="Type Of Event"
+                       widget="many2many_tags"
+                       options="{'color_field': 'color'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Event Form View -->
+    <record id="event_event_view_form_inherit" model="ir.ui.view">
+        <field name="name">event.event.view.form.inherit</field>
+        <field name="model">event.event</field>
+        <field name="inherit_id" ref="event.view_event_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tag_ids']" position="after">
+                <field name="employee_in_charge_id"
+                       domain="[('resource_id.department_id.name', '=', 'משרד')]"/>
+                <field name="shift_manager_id"
+                       domain="[('resource_id.department_id.name', '=', 'ניהול')]"/>
+                <field name="chef_ids" widget="many2many_tags"
+                       string="Chefs"
+                       options="{'color_field': 'color'}"
+                       domain="[('resource_id.department_id.name', '=', 'שפים')]"/>
+            </xpath>
+            <xpath expr="//form/sheet/notebook" position="inside">
+                <page string="Business Workshop" name="business_workshop">
+                    <group>
+                        <group>
+                            <field name="customer_id"/>
+                            <field name="sale_order_id"/>
+                        </group>
+                    </group>
+                </page>
+                <page string="Chef Answer" name="chef_answer">
+                    <group>
+                        <field name="chef_answer_ids" readonly="True">
+                            <list>
+                                <field name="chef_id"/>
+                                <field name="actual_participants"/>
+                                <field name="customer_satisfaction"/>
+                                <field name="unusual_problems"/>
+                                <field name="is_chef_answer"/>
+                                <field name="is_shift_manager_answer"/>
+                            </list>
+                        </field>
+                        <group>
+                            <field name="notes_shift_manager"/>
+                            <field name="financial_notes"/>
+                        </group>
+                        <group>
+                            <field name="sensitivities"/>
+                            <field name="vegans_number"/>
+                            <field name="vegetarians_number"/>
+                            <field name="wines"/>
+                            <field name="beer"/>
+                            <field name="soft_drink"/>
+                            <field name="apron_number"/>
+                            <field name="notes_for_chef"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
